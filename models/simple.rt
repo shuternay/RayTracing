@@ -1,0 +1,87 @@
+viewport
+    origin 0 0 0
+    topleft -500 1000 500
+    bottomleft -500 1000 -500
+    topright 500 1000 500
+endviewport
+
+materials
+    entry
+        name red
+        color 255 0 0
+    endentry
+    entry
+        name green
+        color 0 255 0
+    endentry
+    entry
+        name blue
+        color 0 0 255
+    endentry
+    entry
+        name yellow
+        color 255 255 0
+    endentry
+endmaterials
+
+lights
+    reference
+        power 1
+        distance 250
+    endreference
+    point
+        coords 300 1000 0
+        power 1
+    endpoint
+    point
+        coords 0 1000 300
+        power 1
+    endpoint
+    point
+        coords 300 1000 300
+        power 1
+    endpoint
+    point
+        coords -300 1000 0
+        power 1
+    endpoint
+    point
+        coords 0 1000 -300
+        power 1
+    endpoint
+    point
+        coords -300 1000 -300
+        power 1
+    endpoint
+endlights
+
+geometry
+    sphere
+        coords 300 1500 0
+        radius 100
+        material red
+    endsphere
+    sphere
+        coords 0 1500 300
+        radius 100
+        material green
+    endsphere
+    sphere
+        coords 300 1500 300
+        radius 100
+        material blue
+    endsphere
+
+    triangle
+        vertex -900 2000 -900
+        vertex 900 2300 -900
+        vertex 900 2000 900
+        material green
+    endtriangle
+    triangle
+        vertex -900 2000 -900
+        vertex -900 2300 900
+        vertex 900 2000 900
+        material yellow
+    endtriangle
+endgeometry

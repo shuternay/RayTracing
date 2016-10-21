@@ -1,0 +1,48 @@
+viewport
+	origin -1.5 0 0
+	topleft 0 -1 1
+	topright 0 1 1
+	bottomleft 0 -1 -1
+endviewport
+
+materials
+	entry
+		name red
+		color 255 0 0
+		reflect 0.5
+	endentry
+	entry
+		name wall
+		color 255 255 255
+	endentry
+endmaterials
+
+lights
+	point
+		coords -0.1 -1 0
+		power 1
+	endpoint
+	point
+		coords -0.1 1 0
+		power 1
+	endpoint
+	point
+		coords -3 0 0
+		power 3
+	endpoint
+endlights
+
+geometry
+	quadrangle
+		vertex 0 1 1
+		vertex 0 1 -1
+		vertex 0 -1 -1
+		vertex 0 -1 1
+		material wall
+	endquadrangle
+	sphere
+		coords -0.3 0 0
+		radius 0.5
+		material red
+	endsphere
+endgeometry

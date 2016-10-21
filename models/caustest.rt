@@ -1,0 +1,101 @@
+viewport
+	origin -3 -0.1 0.2
+	screen
+		topleft 0 -1.5 1.5
+		topright 0 1.5 1.5
+		bottomleft 0 -1.5 -1.5
+	endscreen
+endviewport
+
+materials
+	entry
+		name wall
+		color 210 210 240
+	endentry
+	entry
+		name glass
+		reflect 0.2
+		alpha 0.4
+		refract 0.7
+		specular 1.0
+		shininess 8.0
+		color 0 250 0
+	endentry
+	entry
+		name textured
+		reflect 0.1
+		texture examples/prostyn_small.tga
+	endentry
+	entry
+		name blueglass
+		alpha 0.5
+		color 200 200 255
+	endentry
+	entry
+		name redglass
+		alpha 0.5
+		color 255 200 200
+	endentry
+endmaterials
+
+lights
+	point
+		coords 0 0 10
+		power 100
+	endpoint
+	reference
+		power 1
+		distance 1
+	endreference
+endlights
+
+geometry
+sphere
+	coords 0 0 0.5
+	radius 0.75
+	material glass
+endsphere
+
+triangle
+	vertex -1 -1 8
+	vertex 1 -1 8
+	vertex -1 1 8
+	material redglass
+endtriangle
+
+triangle
+	vertex 1 -1 8
+	vertex 1 1 8
+	vertex -1 1 8
+	material blueglass
+endtriangle
+
+triangle
+	vertex -1 -1 -1
+	vertex 1 -1 -1 #it is only test comment - just for testing
+	vertex -1 1 -1
+	material wall
+endtriangle
+
+triangle
+	vertex 1 -1 -1
+	vertex 1 1 -1
+	vertex -1 1 -1
+	material wall
+endtriangle
+
+triangle
+	vertex 1 -1 -1
+	vertex 1 -1 2
+	vertex 1 1 -1
+	material textured #wall
+endtriangle
+
+triangle
+	vertex 1 -1 2
+	vertex 1 1 2
+	vertex 1 1 -1
+	material wall
+endtriangle
+endgeometry
+
